@@ -11,7 +11,8 @@ class IsPennsylvaniaAvenueOpen < Sinatra::Base
   include ActionView::Helpers::DateHelper
   helpers Sinatra::Jsonp
   enable :json_pretty
-
+  set :protection, :except => :frame_options
+  
   configure do
     uri = URI.parse(ENV["REDISTOGO_URL"] || "redis://127.0.0.1:16379")
     @@redis = Redis.new(:host => uri.host, :port => uri.port,:password => uri.password)
