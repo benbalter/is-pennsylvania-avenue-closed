@@ -11,16 +11,17 @@ class IsPennsylvaniaAvenueOpen < Sinatra::Base
   helpers Sinatra::Jsonp
   enable :json_pretty
 
-  def redis_url
-    @redis_url ||= URI.parse(ENV["REDISTOGO_URL"] || "redis://127.0.0.1:16379")
+  configure do
+    uri = URI.parse(ENV["REDISTOGO_URL"] || "redis://127.0.0.1:16379")
+    @@redis = Redis.new(
+      :host     => uri.host,
+      :port     => uri.port,
+      :password => uri.password
+    )
   end
 
   def redis
-    @redis ||= Redis.new(
-      :host     => redis_url.host,
-      :port     => redis_url.port,
-      :password => redis_url.password
-    )
+    @@redis
   end
 
   def set(value)
