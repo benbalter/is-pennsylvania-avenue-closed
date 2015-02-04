@@ -4,6 +4,7 @@ require 'date'
 require 'action_view'
 require 'json'
 require "sinatra/jsonp"
+require 'coffee-script'
 
 class IsPennsylvaniaAvenueOpen < Sinatra::Base
 
@@ -40,5 +41,9 @@ class IsPennsylvaniaAvenueOpen < Sinatra::Base
 
   get "/api" do
     jsonp({:closed => closed?, :timestamp => timestamp})
+  end
+
+  get "/script.js" do
+    coffee :script
   end
 end

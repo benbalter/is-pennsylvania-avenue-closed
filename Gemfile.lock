@@ -14,8 +14,13 @@ GEM
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     builder (3.2.2)
+    coffee-script (2.3.0)
+      coffee-script-source
+      execjs
+    coffee-script-source (1.9.0)
     dotenv (1.0.2)
     erubis (2.7.0)
+    execjs (2.2.2)
     foreman (0.77.0)
       dotenv (~> 1.0.2)
       thor (~> 0.19.1)
@@ -58,6 +63,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionview
+  coffee-script
   foreman
   rack (= 1.5.2)
   redis

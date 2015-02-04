@@ -6,3 +6,4 @@ gem "foreman"
 gem "actionview"
 gem "rack", "1.5.2"
 gem 'sinatra-jsonp'
+gem "coffee-script"
