@@ -10,7 +10,7 @@ require 'dotenv'
 
 Dotenv.load
 
-class IsPennsylvaniaAvenueOpen < Sinatra::Base
+class IsPennsylvaniaAvenueClosed < Sinatra::Base
 
   include ActionView::Helpers::DateHelper
   helpers Sinatra::Jsonp
@@ -35,6 +35,13 @@ class IsPennsylvaniaAvenueOpen < Sinatra::Base
     end
   end
 
+  def tweet!
+    return unless Sinatra::Base.production?
+    twitter.update "A user is reporting Pennsylvania Avenue is #{closed? ? "CLOSED" : "OPEN"}"
+  rescue
+    nil
+  end
+
   def closed?
     @closed ||= redis.get("closed") == "true"
   end
@@ -46,7 +53,7 @@ class IsPennsylvaniaAvenueOpen < Sinatra::Base
   post "/update" do
     redis.set "closed", !closed?
     redis.set "timestamp", Time.now.to_i
-    twitter.update "A user is reporting Pennsylvania Avenue is #{closed? ? "CLOSED" : "OPEN"}"
+    tweet!
     redirect "/"
   end
 

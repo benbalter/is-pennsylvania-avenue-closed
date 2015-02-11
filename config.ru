@@ -1,2 +1,2 @@
 require './server'
-run IsPennsylvaniaAvenueOpen
+run IsPennsylvaniaAvenueClosed

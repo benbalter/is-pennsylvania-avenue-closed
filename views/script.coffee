@@ -1,4 +1,4 @@
-class IsPennsylvaniaAvenueOpen
+class IsPennsylvaniaAvenueClosed
 
   castle: ["38.8977", "-77.0366"]
   radius: .5 # Maximum allowed update distance in KM
@@ -37,4 +37,4 @@ class IsPennsylvaniaAvenueOpen
     navigator.geolocation.getCurrentPosition @success, @error
 
 jQuery ->
-  new IsPennsylvaniaAvenueOpen()
+  new IsPennsylvaniaAvenueClosed()
