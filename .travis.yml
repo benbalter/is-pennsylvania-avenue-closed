@@ -1,4 +1,4 @@
 language: ruby
-script: "bundle exec rake spec"
+script: "script/cibuild"
 sudo: false
 cache: bundler
