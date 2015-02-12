@@ -2,6 +2,8 @@
 
 *Crowd sources whether pedestrians can walk down Pennsylvania Avenue in front of the White House*
 
+[![Build Status](https://travis-ci.org/benbalter/is-pennsylvania-avenue-closed.svg?branch=master)](https://travis-ci.org/benbalter/is-pennsylvania-avenue-closed)
+
 * [Live site](https://is-pennsylvania-avenue-closed.herokuapp.com/)
 * [API](https://is-pennsylvania-avenue-open.herokuapp.com/api)
 
