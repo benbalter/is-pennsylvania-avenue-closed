@@ -1,2 +1,2 @@
-require './server'
-run IsPennsylvaniaAvenueOpen
+require './lib/server'
+run IsPennsylvaniaAvenueClosed

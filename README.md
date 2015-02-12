@@ -1,4 +1,4 @@
-# Is Pennsylvania Avenue Open?
+# Is Pennsylvania Avenue Closed?
 
 *Crowd sources whether pedestrians can walk down Pennsylvania Avenue in front of the White House*
 

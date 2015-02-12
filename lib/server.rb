@@ -5,34 +5,31 @@ require 'action_view'
 require 'json'
 require "sinatra/jsonp"
 require 'coffee-script'
+require 'twitter'
+require 'dotenv'
+require_relative "helpers"
+require_relative "redis_helper"
 
-class IsPennsylvaniaAvenueOpen < Sinatra::Base
+Dotenv.load
+
+class IsPennsylvaniaAvenueClosed < Sinatra::Base
 
   include ActionView::Helpers::DateHelper
+  include IsPennsylvaniaAvenueClosed::Helpers
+  extend  IsPennsylvaniaAvenueClosed::RedisHelper
+
   helpers Sinatra::Jsonp
   enable :json_pretty
+
   set :protection, :except => :frame_options
-  
+
   configure do
-    uri = URI.parse(ENV["REDISTOGO_URL"] || "redis://127.0.0.1:16379")
-    @@redis = Redis.new(:host => uri.host, :port => uri.port,:password => uri.password)
-  end
-
-  def redis
-    @@redis
-  end
-
-  def closed?
-    @closed ||= redis.get("closed") == "true"
-  end
-
-  def timestamp
-    @timestamp ||= Time.at(redis.get("timestamp").to_i)
+    init_redis!
   end
 
   post "/update" do
-    redis.set "closed", !closed?
-    redis.set "timestamp", Time.now.to_i
+    toggle!
+    tweet!
     redirect "/"
   end
 
