@@ -4,3 +4,9 @@ sudo: false
 cache: bundler
 services:
   - redis-server
+env:
+  global:
+    TWITTER_ACCESS_TOKEN: asdf1234
+    TWITTER_ACCESS_TOKEN_SECRET: asdf1234
+    TWITTER_CONSUMER_KEY: asdf1234
+    TWITTER_CONSUMER_SECRET: asdf1234
