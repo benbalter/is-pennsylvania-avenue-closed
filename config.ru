@@ -1,2 +1,2 @@
-require './server'
+require './lib/server'
 run IsPennsylvaniaAvenueClosed
