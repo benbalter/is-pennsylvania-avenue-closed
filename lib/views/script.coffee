@@ -4,7 +4,7 @@ class IsPennsylvaniaAvenueClosed
   radius: .5 # Maximum allowed update distance in KM
 
   constructor: ->
-    $('a').click @update
+    $('.update a').click @update
 
   # https://stackoverflow.com/questions/27928/how-do-i-calculate-distance-between-two-latitude-longitude-points
   distance: (lat1, lon1, lat2, lon2) ->
