@@ -37,7 +37,7 @@ describe "IsPennsylvaniaAvenueClosed" do
     get "/api"
     data = JSON.parse(last_response.body)
     expect(data["closed"]).to eql(true)
-    expect(data["timestamp"]).to eql(Time.at(ts).to_s)
+    expect(data["timestamp"]).to match(Time.at(ts).to_date.to_s)
   end
 
   it "updates the status from closed to open" do
