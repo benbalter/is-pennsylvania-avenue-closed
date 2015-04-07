@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    actionpack (1.4.0)
     actionview (4.2.0)
       activesupport (= 4.2.0)
       builder (~> 3.1)
@@ -55,6 +56,9 @@ GEM
       method_source (~> 0.8.1)
       slop (~> 3.4)
     rack (1.5.2)
+    rack-google-analytics (1.2.0)
+      actionpack
+      activesupport
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -117,9 +121,11 @@ PLATFORMS
 DEPENDENCIES
   actionview
   coffee-script
+  dotenv
   foreman
   pry
   rack (= 1.5.2)
+  rack-google-analytics
   rack-test
   rake
   redis

@@ -8,6 +8,8 @@ gem "rack", "1.5.2"
 gem 'sinatra-jsonp'
 gem "coffee-script"
 gem 'twitter'
+gem 'rack-google-analytics'
+gem "dotenv"
 
 # Bundle these in prod to prevent a heroku error
 gem "rake"

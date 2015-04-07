@@ -7,6 +7,7 @@ require "sinatra/jsonp"
 require 'coffee-script'
 require 'twitter'
 require 'dotenv'
+require 'rack-google-analytics'
 require_relative "helpers"
 require_relative "redis_helper"
 
@@ -22,6 +23,7 @@ class IsPennsylvaniaAvenueClosed < Sinatra::Base
   enable :json_pretty
 
   set :protection, :except => :frame_options
+  use Rack::GoogleAnalytics, :tracker => ENV["GA_TRACKER"]
 
   configure do
     init_redis!
