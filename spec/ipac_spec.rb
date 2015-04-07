@@ -42,7 +42,7 @@ describe "IsPennsylvaniaAvenueClosed" do
 
   it "updates the status from closed to open" do
     stub = stub_request(:post, "https://api.twitter.com/1.1/statuses/update.json").
-         with(:body => {"status"=>"A user is reporting Pennsylvania Avenue is OPEN"}).
+         with(:body => {"status"=>"A user is reporting Pennsylvania Avenue is OPEN http://www.ispennsylvaniaavenueclosed.com"}).
          to_return(:status => 200, :body => "", :headers => {})
 
     redis.set "closed", true
@@ -59,7 +59,7 @@ describe "IsPennsylvaniaAvenueClosed" do
 
   it "updates the status from open to closed" do
     stub = stub_request(:post, "https://api.twitter.com/1.1/statuses/update.json").
-         with(:body => {"status"=>"A user is reporting Pennsylvania Avenue is CLOSED"}).
+         with(:body => {"status"=>"A user is reporting Pennsylvania Avenue is CLOSED http://www.ispennsylvaniaavenueclosed.com"}).
          to_return(:status => 200, :body => "", :headers => {})
 
     redis.set "closed", false

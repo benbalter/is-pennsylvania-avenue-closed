@@ -62,7 +62,7 @@ describe "IsPennsylvaniaAvenueClosed::Helpers" do
   it "tweets when open" do
     @helper.redis.set "closed", false
     stub = stub_request(:post, "https://api.twitter.com/1.1/statuses/update.json").
-         with(:body => {"status"=>"A user is reporting Pennsylvania Avenue is OPEN"}).
+         with(:body => {"status"=>"A user is reporting Pennsylvania Avenue is OPEN http://www.ispennsylvaniaavenueclosed.com"}).
          to_return(:status => 200, :body => "", :headers => {})
     @helper.tweet!
     expect(stub).to have_been_requested
@@ -71,7 +71,7 @@ describe "IsPennsylvaniaAvenueClosed::Helpers" do
   it "tweets when closed" do
     @helper.redis.set "closed", true
     stub = stub_request(:post, "https://api.twitter.com/1.1/statuses/update.json").
-         with(:body => {"status"=>"A user is reporting Pennsylvania Avenue is CLOSED"}).
+         with(:body => {"status"=>"A user is reporting Pennsylvania Avenue is CLOSED http://www.ispennsylvaniaavenueclosed.com"}).
          to_return(:status => 200, :body => "", :headers => {})
     @helper.tweet!
     expect(stub).to have_been_requested
