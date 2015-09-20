@@ -17,6 +17,8 @@
 
 `script/cibuild`
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 # About [ispennsylvaniaavenueclosed.com](http://www.ispennsylvaniaavenueclosed.com/)
 
 ## Who is this site for?  
@@ -52,6 +54,10 @@ The simplest way to ensure quality status updates is to geo-locate anyone trying
 ## Do I need to create an account to update the site's status?  
 
 No.  The site doesn't require any account creation.  
+
+## I just tried to update the site's status but nothing changed...
+
+It's possible that you did not geo-locate close enough to the area at issue.  If you are not within 3 blocks of the White House, you won't be able to update the site's status.  
 
 ## Can I check this on Twitter?  
 
