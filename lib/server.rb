@@ -33,6 +33,10 @@ class IsPennsylvaniaAvenueClosed < Sinatra::Base
     init_redis!
   end
 
+  before do
+    redirect url if settings.production? && request.host != config["domain"]
+  end
+
   post "/update" do
     toggle!
     tweet!
