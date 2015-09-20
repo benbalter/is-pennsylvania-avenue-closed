@@ -9,5 +9,5 @@ describe "IsPennsylvaniaAvenueClosed::RedisHelper" do
   it "init's redis" do
     expect(TestHelper.init_redis!.class).to eql(Redis)
   end
-
+  
 end
