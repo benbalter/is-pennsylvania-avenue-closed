@@ -76,4 +76,12 @@ describe "IsPennsylvaniaAvenueClosed::Helpers" do
     @helper.tweet!
     expect(stub).to have_been_requested
   end
+
+  it "exposes the config" do
+    expect(@helper.config["title"]).to eql("Is Pennsylvania Avenue Closed?")
+  end
+
+  it "exposes the URL" do
+    expect(@helper.url).to eql("http://ispennsylvaniaavenueclosed.com")
+  end
 end

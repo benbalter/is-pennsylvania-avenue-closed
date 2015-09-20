@@ -131,6 +131,7 @@ PLATFORMS
 
 DEPENDENCIES
   actionview
+  addressable
   coffee-script
   dotenv
   foreman
