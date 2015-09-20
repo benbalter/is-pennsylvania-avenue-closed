@@ -17,17 +17,17 @@
 
 `script/cibuild`
 
-# About this website...
+# About [ispennsylvaniaavenueclosed.com](http://www.ispennsylvaniaavenueclosed.com/)
 
-## Who is this website for?  
+## Who is this site for?  
 
 Anyone who is planning to walk or bike across Pennyslvania Avenue in front of the White House in the next few minutes.  
 
-## What does this website do?  
+## What does this site do?  
 
 Tells you if Pennsylvania Avenue is closed to pedestrians and bicycle traffic in front of the White House.  
 
-## How do I use the website?  
+## How do I use the site?  
 
 Just load [www.ispennsylvaniaavenueclosed.com](http://www.ispennsylvaniaavenueclosed.com/) and you can see a recent update on whether Pennyslvania Avenue is open or closed.  There will be an indication of how recent the update is.  
 
@@ -41,11 +41,11 @@ Anyone who is near the White House and sees that the site needs updating can do 
 
 There's a link at the bottom of the page to quickly change the status.  It only takes a moment.  
 
-## If I am already at Pennyslvania Avenue, why should I update the website's status?  
+## If I am already at Pennyslvania Avenue, why should I update the site's status?  
 
 Karma!  Your updating the website helps keep it fresh and useful for other people.   The more of us that ensure that this site stays accurate and up to date, the more useful the resource will be for all of us.  
 
-## Why does the website ask to see my location?  
+## Why does the site ask to see my location?  
 
 The simplest way to ensure quality status updates is to geo-locate anyone trying to update the website and make sure that they are within about 3 blocks of the White House.   You'll only need to do this once.  
 
@@ -63,5 +63,5 @@ Yes!  Updates are posted to [twitter.com/penn_ave_status](https://twitter.com/pe
 
 ## I have some feedback.  How do you want it?  
 
-Great.  Please [file an issue](https://github.com/benbalter/is-pennsylvania-avenue-closed/issues).  
+Great.  Please [file an issue here](https://github.com/benbalter/is-pennsylvania-avenue-closed/issues).  
 
