@@ -17,7 +17,7 @@
 
 `script/cibuild`
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+---
 
 # About [ispennsylvaniaavenueclosed.com](http://www.ispennsylvaniaavenueclosed.com/)
 
