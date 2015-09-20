@@ -20,7 +20,7 @@ class IsPennsylvaniaAvenueClosed < Sinatra::Base
 
     def tweet!
       return if Sinatra::Base.development?
-      twitter.update "A user is reporting Pennsylvania Avenue is #{closed? ? "CLOSED" : "OPEN"} http://www.ispennsylvaniaavenueclosed.com"
+      twitter.update "A user is reporting Pennsylvania Avenue is #{closed? ? "CLOSED" : "OPEN"} #{url}"
     rescue
       nil
     end
