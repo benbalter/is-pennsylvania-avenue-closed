@@ -32,5 +32,22 @@ class IsPennsylvaniaAvenueClosed < Sinatra::Base
     def timestamp
       Time.at(redis.get("timestamp").to_i)
     end
+
+    def url
+      @url ||= Addressable::URI.new(
+        :scheme => config["https"] ? "https" : "http",
+        :host   => config["domain"]
+      ).to_s
+    end
+
+    def config
+      @config ||= YAML.load_file(config_path)
+    end
+
+    private
+
+    def config_path
+      File.expand_path "../config.yml", File.dirname(__FILE__)
+    end
   end
 end

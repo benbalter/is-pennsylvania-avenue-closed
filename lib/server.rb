@@ -5,9 +5,13 @@ require 'action_view'
 require 'json'
 require "sinatra/jsonp"
 require 'coffee-script'
+require 'tilt/erubis'
+require 'tilt/coffee'
 require 'twitter'
 require 'dotenv'
 require 'rack-google-analytics'
+require 'addressable/uri'
+require 'yaml'
 require_relative "helpers"
 require_relative "redis_helper"
 
@@ -36,7 +40,14 @@ class IsPennsylvaniaAvenueClosed < Sinatra::Base
   end
 
   get "/" do
-    halt erb :index, :locals => { :closed => closed?, :timestamp => time_ago_in_words(timestamp) }
+    halt erb :index, :locals => {
+      :closed      => closed?,
+      :timestamp   => time_ago_in_words(timestamp),
+      :title       => "#{config["title"]} #{closed? ? "Yes" : "No"}",
+      :description => config["description"],
+      :twitter     => config["twitter"],
+      :url         => url
+    }
   end
 
   get "/api" do

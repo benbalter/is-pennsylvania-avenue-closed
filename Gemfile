@@ -10,6 +10,7 @@ gem "coffee-script"
 gem 'twitter'
 gem 'rack-google-analytics'
 gem "dotenv"
+gem 'addressable'
 
 # Bundle these in prod to prevent a heroku error
 gem "rake"
