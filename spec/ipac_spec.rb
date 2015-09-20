@@ -18,6 +18,7 @@ describe "IsPennsylvaniaAvenueClosed" do
   end
 
   it "displays the status when open" do
+    redis.set "closed", true
     redis.set "closed", false
     get "/"
     expect(last_response.body).to match(/\<h1>No\<\/h1>/i)
