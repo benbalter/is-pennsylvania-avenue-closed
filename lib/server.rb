@@ -46,7 +46,8 @@ class IsPennsylvaniaAvenueClosed < Sinatra::Base
       :title       => "#{config["title"]} #{closed? ? "Yes" : "No"}",
       :description => config["description"],
       :twitter     => config["twitter"],
-      :url         => url
+      :url         => url,
+      :repo        => config["repo"]
     }
   end
 

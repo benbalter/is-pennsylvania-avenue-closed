@@ -1,9 +1,9 @@
 <% if closed %>
-<h1>Yes</h1>
-<h3>It's closed. You'll have to go around.</h3>
+  <h1>Yes</h1>
+  <h3>It's closed. You'll have to go around.</h3>
 <% else %>
-<h1>No</h1>
-<h3>It's open.</h3>
+  <h1>No</h1>
+  <h3>It's open.</h3>
 <% end %>
 
 <p class="reported">Reported <%= timestamp %> ago</p>
@@ -13,5 +13,8 @@
 </form>
 
 <div class=meta>
-  <a href="https://twitter.com/penn_ave_status">Twitter</a> | <a href="https://github.com/benbalter/is-pennsylvania-avenue-closed">Source</a> | <a href="/api">API</a> | <a href="https://github.com/benbalter/is-pennsylvania-avenue-closed/issues">Feedback</a>
+  <a href="https://twitter.com/<%= twitter["username"] %>">Twitter</a> |
+  <a href="<%= repo %>">Source</a> |
+  <a href="<%= url %>/api">API</a> |
+  <a href="<%= repo %>/issues">Feedback</a>
 </div>
