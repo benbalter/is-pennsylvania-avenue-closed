@@ -12,6 +12,7 @@ require 'dotenv'
 require 'rack-google-analytics'
 require 'addressable/uri'
 require 'yaml'
+require 'party_foul'
 require_relative "helpers"
 require_relative "redis_helper"
 
@@ -33,6 +34,15 @@ class IsPennsylvaniaAvenueClosed < Sinatra::Base
     init_redis!
   end
 
+  configure :production do
+    PartyFoul.configure do |config|
+      config.oauth_token = ENV["GITHUB_TOKEN"]
+      config.owner = "benbalter"
+      config.repo  = "is-pennsylvania-avenue-closed"
+    end
+    use PartyFoul::Middleware
+  end
+
   before do
     redirect url if settings.production? && request.host != config["domain"]
   end
@@ -44,6 +54,7 @@ class IsPennsylvaniaAvenueClosed < Sinatra::Base
   end
 
   get "/" do
+    raise "TEST"
     halt erb :index, :locals => {
       :closed      => closed?,
       :timestamp   => time_ago_in_words(timestamp),

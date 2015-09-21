@@ -11,6 +11,7 @@ gem 'twitter'
 gem 'rack-google-analytics'
 gem "dotenv"
 gem 'addressable'
+gem 'party_foul'
 
 # Bundle these in prod to prevent a heroku error
 gem "rake"
