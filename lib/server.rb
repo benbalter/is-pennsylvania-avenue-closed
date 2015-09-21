@@ -54,7 +54,6 @@ class IsPennsylvaniaAvenueClosed < Sinatra::Base
   end
 
   get "/" do
-    raise "TEST"
     halt erb :index, :locals => {
       :closed      => closed?,
       :timestamp   => time_ago_in_words(timestamp),
